@@ -39,7 +39,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${inter.variable} ${notoSerif.variable} ${playfair.variable} h-full antialiased dark`}
     >
-      <body className="min-h-full bg-background text-foreground flex flex-col">
+      <body className="min-h-full bg-background font-body text-on-surface selection:bg-primary/30 selection:text-primary flex flex-col">
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />
