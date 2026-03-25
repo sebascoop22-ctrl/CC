@@ -1,38 +1,49 @@
-import Image from "next/image";
 import Link from "next/link";
 
+/**
+ * Landing page: structural + class parity with
+ * `stitch/home_daily_featured_venue/code.html` (paths wired to Next routes).
+ */
 const mailto = "mailto:hello@cooperconcierge.com";
+
+const heroBgPrimary =
+  "https://lh3.googleusercontent.com/aida-public/AB6AXuDC16evs2XQfwlUp-tn5pMDm9LyK85GoUCWvTkEKEgi0SbEgVcw9FGwrU-T0Hg0mfY6XtqaK6eq8pUvI1Ozx8T4mWmuPiTTXcFPXF21gVfW7p4jPLujU6Kzs2OmQhp-iYcc1AFbeQ-YUlqWXn3qv1k2W-DnbQXg0-cel79DDmapGM69WhLuZrJsOEFoNC672-LiFt-qD3fafdg1GQ00IwXPUubpcvkssYjedVFptd4C8hrHSF7ND8QK4kODIXpg654pkToz_CJamUs";
+
+const heroBgSecondary =
+  "https://lh3.googleusercontent.com/aida-public/AB6AXuAgLvJ5Y8Wl7LQJbTBzEqlvCsJMxV6el8ox7AL6Kti3L0hx25bs7yPL0wzlEDG1jkjAodTQkUFBlAiA38lhMhfAL8gJEY3IM3BizYbtY7lMTt8y_gPOgcM-AHMyyYd9UeZ1weiDu8kLt77ywsN6Qo5FsXvaUe3ek7ud6MLjigxcqbwz-6EXdT10Zs_hi7vUR10rEm278gZ0n5j6ULdVbdZuiHaDFA1BYB3e11Q01OLyd9OVh3X9N9CogdgIHxUI21HMYGHV44Uz8W0";
+
+const logoSrc =
+  "https://lh3.googleusercontent.com/aida/ADBb0uh4Ubt4lyXJZhyDqrRegzog42pIlX8cUdkXC5T5w5LilfiO-ShkEOl1YaIiWe960jR0AR-1VWMy6wQFyshuaiynArxJRTjMRcBhztNYQbpnzaTKcn43otJM2dYwUDHsOWWX65Ni5cVeltx4y_AXOO_Lg9skW8ZH3amA9rde0g5tnG_u2fHvRiVTlepvH89U4OZNXBx6aFWBkqoblluvfsXNvJJmdELcODsp9IwP0Bv7rfuCzxoDwW3SUyWz6-OO8ddo3IWcxsjh";
 
 export default function Home() {
   return (
-    <>
-      {/* Hero – matches Stitch home_daily_featured_venue */}
+    <div className="bg-background text-on-surface font-body selection:bg-primary/30 selection:text-primary">
       <section className="relative flex min-h-[85vh] items-center justify-center overflow-hidden pb-20 pt-24">
         <div className="absolute inset-0 z-0">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            alt=""
-            className="h-full w-full object-cover opacity-70"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDC16evs2XQfwlUp-tn5pMDm9LyK85GoUCWvTkEKEgi0SbEgVcw9FGwrU-T0Hg0mfY6XtqaK6eq8pUvI1Ozx8T4mWmuPiTTXcFPXF21gVfW7p4jPLujU6Kzs2OmQhp-iYcc1AFbeQ-YUlqWXn3qv1k2W-DnbQXg0-cel79DDmapGM69WhLuZrJsOEFoNC672-LiFt-qD3fafdg1GQ00IwXPUubpcvkssYjedVFptd4C8hrHSF7ND8QK4kODIXpg654pkToz_CJamUs"
+            alt="luxury car interior"
+            className="absolute inset-0 h-full w-full object-cover opacity-70"
+            src={heroBgPrimary}
           />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            alt=""
-            className="h-full w-full object-cover opacity-50"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgLvJ5Y8Wl7LQJbTBzEqlvCsJMxV6el8ox7AL6Kti3L0hx25bs7yPL0wzlEDG1jkjAodTQkUFBlAiA38lhMhfAL8gJEY3IM3BizYbtY7lMTt8y_gPOgcM-AHMyyYd9UeZ1weiDu8kLt77ywsN6Qo5FsXvaUe3ek7ud6MLjigxcqbwz-6EXdT10Zs_hi7vUR10rEm278gZ0n5j6ULdVbdZuiHaDFA1BYB3e11Q01OLyd9OVh3X9N9CogdgIHxUI21HMYGHV44Uz8W0"
+            alt="city lights reflection"
+            className="absolute inset-0 h-full w-full object-cover opacity-50"
+            src={heroBgSecondary}
           />
           <div className="absolute inset-0 hero-gradient" />
         </div>
         <div className="relative z-10 px-6 text-center">
           <span className="mb-2 block font-label text-xs uppercase tracking-[0.4em] text-primary">
-            Imperial Elite Services
+            Imperial Onyx Services
           </span>
           <div className="mb-4 flex justify-center">
-            <Image
-              alt="Cooper Concierge"
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              alt="Cooper Concierge Logo"
               className="h-48 w-auto object-contain md:h-[24rem]"
-              src="/cc_logo.jpeg"
-              width={480}
-              height={480}
-              priority
+              src={logoSrc}
             />
           </div>
           <div className="flex flex-col items-center justify-center gap-8 md:flex-row">
@@ -43,8 +54,8 @@ export default function Home() {
               Book the Evening
             </a>
             <Link
-              className="rounded-md border border-outline-variant/15 px-10 py-4 font-label text-sm uppercase tracking-widest text-primary transition-all hover:bg-white/5"
               href="/chauffeuring"
+              className="rounded-md border border-outline-variant/15 px-10 py-4 font-label text-sm uppercase tracking-widest text-primary transition-all hover:bg-white/5"
             >
               View Fleet
             </Link>
@@ -52,7 +63,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Tonight's featured venue */}
       <section className="border-y border-outline-variant/5 bg-surface-container-low py-12">
         <div className="mx-auto max-w-7xl px-12">
           <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
@@ -80,7 +90,6 @@ export default function Home() {
                 <button
                   type="button"
                   className="flex h-10 w-10 items-center justify-center rounded-full border border-outline-variant/20 text-primary transition-colors hover:border-primary/50"
-                  aria-label="Previous"
                 >
                   <span className="material-symbols-outlined text-sm">chevron_left</span>
                 </button>
@@ -90,7 +99,6 @@ export default function Home() {
                 <button
                   type="button"
                   className="flex h-10 w-10 items-center justify-center rounded-full border border-outline-variant/20 text-primary transition-colors hover:border-primary/50"
-                  aria-label="Next"
                 >
                   <span className="material-symbols-outlined text-sm">chevron_right</span>
                 </button>
@@ -106,8 +114,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Curated Essentials masonry-style grid */}
-      <section id="portfolio" className="bg-surface-container-low py-32 scroll-mt-28">
+      <section className="bg-surface-container-low py-32">
         <div className="mx-auto max-w-7xl px-12">
           <div className="mb-20 flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
             <div>
@@ -138,8 +145,8 @@ export default function Home() {
               <div className="absolute bottom-10 left-10 right-10 z-10">
                 <h3 className="mb-2 font-headline text-3xl text-primary">Elite Nightlife Services</h3>
                 <p className="mb-6 max-w-md text-sm font-light text-on-surface-variant">
-                  VIP club access, preferred table bookings, and full event management at the
-                  world&apos;s most sought-after venues.
+                  VIP club access, preferred table bookings, and full event management at the world&apos;s
+                  most sought-after venues.
                 </p>
                 <span className="flex items-center gap-2 text-xs uppercase tracking-widest text-on-surface">
                   <span className="material-symbols-outlined text-sm">nightlife</span>
@@ -168,7 +175,7 @@ export default function Home() {
             </Link>
 
             <Link
-              href="/security"
+              href="/inquiry"
               className="group relative aspect-square overflow-hidden rounded-lg bg-surface-container-highest md:col-span-2 lg:col-span-2"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -227,7 +234,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Member testimonials */}
       <section className="bg-surface py-40">
         <div className="mx-auto max-w-7xl px-12">
           <div className="mb-24 text-center">
@@ -237,50 +243,52 @@ export default function Home() {
             <h2 className="font-headline text-4xl text-on-surface md:text-6xl">Member Experiences</h2>
           </div>
           <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
-            {[
-              {
-                quote:
-                  "The discretion is absolute. In a city where everyone is looking, Cooper ensures we remain seen only by those we choose. Their chauffeurs are the gold standard.",
-                name: "Verified Member",
-                title: "Private Family Office",
-              },
-              {
-                quote:
-                  "Last-minute table access at a sold-out venue is one thing, but the seamless transition from the vehicle to the booth is where their true mastery lies.",
-                name: "Elite Client",
-                title: "Hospitality Executive",
-              },
-              {
-                quote:
-                  "They handle the logistics so I can handle the night. For anyone serious about their time and privacy, Cooper is the only concierge worth considering.",
-                name: "Platinum Member",
-                title: "Venture Capitalist",
-              },
-            ].map((t) => (
-              <div
-                key={t.name}
-                className="relative rounded-lg border border-outline-variant/5 bg-surface-container-low p-12"
-              >
-                <span className="material-symbols-outlined absolute left-10 top-10 text-4xl text-primary/30">
-                  format_quote
-                </span>
-                <p className="mb-10 pt-4 font-light italic leading-relaxed text-on-surface-variant">
-                  &ldquo;{t.quote}&rdquo;
-                </p>
-                <div>
-                  <div className="mb-1 font-headline text-on-surface">{t.name}</div>
-                  <div className="text-[10px] uppercase tracking-widest text-primary">{t.title}</div>
-                </div>
+            <div className="relative rounded-lg border border-outline-variant/5 bg-surface-container-low p-12">
+              <span className="material-symbols-outlined absolute left-10 top-10 text-4xl text-primary/30">
+                format_quote
+              </span>
+              <p className="mb-10 pt-4 font-light italic leading-relaxed text-on-surface-variant">
+                &quot;The discretion is absolute. In a city where everyone is looking, Cooper ensures we
+                remain seen only by those we choose. Their chauffeurs are the gold standard.&quot;
+              </p>
+              <div>
+                <div className="mb-1 font-headline text-on-surface">Verified Member</div>
+                <div className="text-[10px] uppercase tracking-widest text-primary">Private Family Office</div>
               </div>
-            ))}
+            </div>
+            <div className="relative rounded-lg border border-outline-variant/5 bg-surface-container-low p-12">
+              <span className="material-symbols-outlined absolute left-10 top-10 text-4xl text-primary/30">
+                format_quote
+              </span>
+              <p className="mb-10 pt-4 font-light italic leading-relaxed text-on-surface-variant">
+                &quot;Last-minute table access at a sold-out venue is one thing, but the seamless transition
+                from the vehicle to the booth is where their true mastery lies.&quot;
+              </p>
+              <div>
+                <div className="mb-1 font-headline text-on-surface">Elite Client</div>
+                <div className="text-[10px] uppercase tracking-widest text-primary">Hospitality Executive</div>
+              </div>
+            </div>
+            <div className="relative rounded-lg border border-outline-variant/5 bg-surface-container-low p-12">
+              <span className="material-symbols-outlined absolute left-10 top-10 text-4xl text-primary/30">
+                format_quote
+              </span>
+              <p className="mb-10 pt-4 font-light italic leading-relaxed text-on-surface-variant">
+                &quot;They handle the logistics so I can handle the night. For anyone serious about their time
+                and privacy, Cooper is the only concierge worth considering.&quot;
+              </p>
+              <div>
+                <div className="mb-1 font-headline text-on-surface">Platinum Member</div>
+                <div className="text-[10px] uppercase tracking-widest text-primary">Venture Capitalist</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Private access CTA */}
       <section className="relative overflow-hidden bg-surface py-40">
         <div className="pointer-events-none absolute left-1/2 top-0 h-full w-full -translate-x-1/2 opacity-10">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-primary via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary via-transparent to-transparent" />
         </div>
         <div className="relative z-10 mx-auto max-w-4xl px-12 text-center">
           <span className="mb-8 block font-label text-xs uppercase tracking-[0.5em] text-primary">
@@ -290,8 +298,8 @@ export default function Home() {
             Secure Your Private Access
           </h2>
           <p className="mb-16 text-xl font-light leading-relaxed text-on-surface-variant">
-            We maintain a limited roster of clients to ensure an unparalleled level of attention.
-            Inquire today for engagement consideration.
+            We maintain a limited roster of clients to ensure an unparalleled level of attention. Inquire
+            today for engagement consideration.
           </p>
           <div className="flex flex-col items-center justify-center gap-4 md:flex-row">
             <input
@@ -316,6 +324,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }
