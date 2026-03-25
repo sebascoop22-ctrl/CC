@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+:root {
+  --background: #131313;
+  --surface: #131313;
+  --surface-lowest: #0e0e0e;
+  --surface-low: #1c1b1b;
+  --surface-high: #2a2a2a;
+  --surface-highest: #353534;
+  --foreground: #e5e2e1;
+  --muted: #cec5b9;
+  --primary: #f1e0c3;
+  --primary-dark: #392f1b;
+  --outline: #4b463d;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-lowest: var(--surface-lowest);
+  --color-surface-low: var(--surface-low);
+  --color-surface-high: var(--surface-high);
+  --color-surface-highest: var(--surface-highest);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-outline: var(--outline);
+  --font-sans: var(--font-geist-sans);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+a {
+  transition: color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+}
+
+.page-shell {
+  @apply mx-auto w-full max-w-7xl px-6 md:px-10;
+}
+
+.section-title {
+  @apply font-serif text-4xl md:text-5xl text-primary;
+}
+
+.section-kicker {
+  @apply mb-3 block text-[10px] uppercase tracking-[0.35em] text-primary/80;
+}
+
+.cta-primary {
+  @apply inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-xs uppercase tracking-[0.2em] text-primary-dark hover:opacity-90;
+}
+
+.cta-secondary {
+  @apply inline-flex items-center justify-center rounded-md border border-primary/30 px-6 py-3 text-xs uppercase tracking-[0.2em] text-primary hover:bg-white/5;
+}
